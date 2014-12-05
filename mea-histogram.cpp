@@ -5,6 +5,7 @@
 #include <mea-histogram.h>
 #include <main_window.h>
 #include <qwt_plot_histogram.h>
+#include <boost/circular_buffer.hpp>
 #include <iostream>
 #include <QtGui>
 
@@ -21,10 +22,6 @@ static DefaultGUIModel::variable_t vars[] = {
 		"Min Interval (ms)",
 		"Minimum interval (refractory period) that must pass before another spike is detected",
 		DefaultGUIModel::PARAMETER | DefaultGUIModel::DOUBLE, },
-	{ "Average ISI (ms)", "Average ISI (ms)", DefaultGUIModel::STATE, },
-	{ "CV", "Coefficient of Variation", DefaultGUIModel::STATE, },
-	{ "# Spikes", "# Spikes", DefaultGUIModel::STATE, },
-	{ "Time (s)", "Time (s)", DefaultGUIModel::STATE, },
 };
 
 static size_t num_vars = sizeof(vars) / sizeof(DefaultGUIModel::variable_t);
